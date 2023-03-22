@@ -2,8 +2,6 @@ import "./App.css";
 import { BrowserRouter, Routes, Route, Navigate, useLocation} from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Navigation from "./components/shared/Navigation/Navigation";
-// import Register from "./pages/Register/Register";
-// import Login from "./pages/Login/Login";
 import Authenticate from "./pages/Authenticate/Authenticate";
 import Activate from "./pages/Activate/Activate";
 import Rooms from "./pages/Rooms/Rooms";
@@ -27,21 +25,14 @@ function App() {
       </GuestRoute>
 
       <SemiProtectedRoute path="/activate" element={<Activate />}>
-
+      <Activate />
       </SemiProtectedRoute>
 
       <ProtectedRoute path="/rooms" element={<Rooms/>}>
         <Rooms />
       </ProtectedRoute>
 
-      {/* <Routes>
-        <Route path="/register" element={<Register/>}>
-        </Route>
-      </Routes>
-      <Routes>
-        <Route path="/login" element={<Login />}>
-        </Route>
-      </Routes> */}
+     
     </BrowserRouter>
   );
 }
@@ -71,7 +62,6 @@ const SemiProtectedRoute = ({children, ...rest}) => {
   const location = useLocation()
   return (
     <Routes>
-      
       <Route {...rest} element={
         !isAuth ? (
           <Navigate to={{
