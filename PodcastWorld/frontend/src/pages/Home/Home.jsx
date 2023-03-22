@@ -16,7 +16,7 @@ const Home = () => {
   const navigate = useNavigate()
 
   function startRegister() {
-    navigate('/register')
+    navigate('/authenticate')
   }
 
   return (
@@ -26,11 +26,11 @@ const Home = () => {
           We're working hard to get audio podcast ready for everyone! Join with best of the speakers in the world. Also become the speaker by creating your own podcast room.
         </p>
         <div>
-          <Button onClick={startRegister} text={"Get your username"}/>
+          <Button onClick={startRegister} text={"Let's Go"}/>
         </div>
         <div className={styles.signinWrapper}>
           <span className={styles.hasInvite}>Have an invite text?</span>
-          <Link style={signInLinkStyle} to="/login">Sign in</Link>
+          
         </div>
       </Card>
     </div>
